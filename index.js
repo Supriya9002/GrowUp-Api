@@ -60,11 +60,11 @@ app.use("/api/student",studentRouter);
 app.use("/api/teacher",teacherRouter);
 app.use("/api/class",classRouter);
 
-app.use(express.static(path.join(__dirname, '/client/dist')));
+// app.use(express.static(path.join(__dirname, '/client/dist')));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-  })
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+//   })
 
 app.use((err,req,res,next)=>{
     const statusCode=err.statusCode || 500;
