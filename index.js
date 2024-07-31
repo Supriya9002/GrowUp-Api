@@ -30,7 +30,7 @@ const connectToDatabase = async () => {
 
 
 
-// const __dirname = path.resolve();
+const __dirname = path.resolve();
 
 const app=express();
 app.use(express.json());
@@ -47,11 +47,11 @@ app.use("/api/student",studentRouter);
 app.use("/api/teacher",teacherRouter);
 app.use("/api/class",classRouter);
 
-// app.use(express.static(path.join(__dirname, '/client/dist')));
+app.use(express.static(path.join(__dirname, '/client/dist')));
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-//   })
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+  })
 
 app.get("/", (req, res)=>{
     res.send("WELCOME to GrowUp App");
