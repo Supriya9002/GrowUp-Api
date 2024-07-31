@@ -66,6 +66,11 @@ app.use("/api/class",classRouter);
 //     res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 //   })
 
+app.get("/", (req, res)=>{
+    res.send("WELCOME to GrowUp App");
+})
+
+
 app.use((err,req,res,next)=>{
     const statusCode=err.statusCode || 500;
     const message=err.message || "Internal Server Error";
